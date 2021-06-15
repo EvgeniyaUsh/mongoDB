@@ -50,7 +50,7 @@ def request_for_payments_and_accrual(payment_collect, accrual_collect):
 
 
 if __name__ == '__main__':
-    client = MongoClient('127.0.0.1', 27017)
+    client = MongoClient()
 
     payment_collection = client.test_database.payment
     accrual_collection = client.test_database.accrual

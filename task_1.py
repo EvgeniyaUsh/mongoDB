@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from pprint import pprint
 
-client = MongoClient('127.0.0.1', 27017)
+client = MongoClient()
 account_collection = client.test_database.Account
 
 pipeline = [{"$unwind": "$sessions"},
