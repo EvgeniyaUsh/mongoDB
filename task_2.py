@@ -26,7 +26,7 @@ def request_for_payments_and_accrual(payment_collect, accrual_collect):
     """
     :param payment_collect: коллекция платежей
     :param accrual_collect: коллекция долгов
-    :return: список платежей, которые не нашли себе долг
+    :return payment_without_accrual: список платежей, которые не нашли себе долг
     """
     for i in payment_collect.find().sort('date'):
         date = i['date']
