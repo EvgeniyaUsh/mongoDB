@@ -2,7 +2,7 @@
 
 ### Task 1.
 
-В коллекции пользователей 'Account' лежат документы вида:
+The 'Account' collection contains documents of the form:
 
     {
         'number': '7800000000000',
@@ -29,9 +29,8 @@
         ]
     }
 
-    Необходимо написать агрегационный запрос, который по каждому пользователю выведет последнее действие
-    и общее количество для каждого из типов 'actions'. Итоговые данные должны представлять собой
-    список документов вида:
+   It is necessary to write an aggregation query that will display the last action for each user
+   and the total for each of the 'actions' types. The final data should be in the form of a list of documents:
 
     {
         'number': '7800000000000',
@@ -62,12 +61,12 @@
     
 ### Task 2.
 
-Есть две коллекции (таблицы) данных: accrual (долги) и payment (платежи). Обе коллекции имеют поля:
+There are two collections (tables) of data: accrual (debts) and payment (payments). Both collections have fields:
 - id
-- date (дата)
-- month (месяц)
+- date 
+- month 
 
-Необходимо написать функцию, которая сделает запрос к платежам и найдёт для каждого платежа долг, который будет им оплачен. Платёж может оплатить только долг, имеющий более раннюю дату. Один платёж может оплатить только один долг, и каждый долг может быть оплачен только одним платежом. Платёж приоритетно должен выбрать долг с совпадающим месяцем (поле month). Если такого нет, то самый старый по дате (поле date) долг.
-Результатом должна быть таблица найденных соответствий, а также список платежей, которые не нашли себе долг.
-Запрос можно делать к любой базе данных (mongodb, postgresql или другие) любым способом.
+It is necessary to write a function that will make a request for payments and find for each payment the debt that will be paid by them. A payment can only pay off a debt that has an earlier date. One payment can only pay one debt, and each debt can only be paid in one payment. The payment must first select a debt with the same month (field month). If there is none, then the oldest by date (date field) debt.
+The result should be a table of found matches, as well as a list of payments that did not find a debt.
+The query can be made to any database (mongodb, postgresql or others) in any way.
 
